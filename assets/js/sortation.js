@@ -24,7 +24,7 @@ function radixSort(array) {
 function radixReverse(array) {
     const reverse = radixSort(array);
 
-    return Array.reverse();
+    return reverse.reverse();
 }
 
 function getMax(array) {
@@ -83,7 +83,7 @@ function sort(id) {
         case "13":
             if(text) {
                 console.log("running");
-                
+
             }
             break;
         case "14":
