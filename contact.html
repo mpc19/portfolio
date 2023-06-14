@@ -1,47 +1,128 @@
-<!DOCTYPE html><html lang="en" style="font-family: 'Noto Sans', sans-serif;"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><title>Portfolio</title><meta name="description" content="My own software developer portfolio site"><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="assets/css/styles.min.css"><link rel="stylesheet" href="assets/css/aos.min.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"><script type="module">
- // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Noto Sans', sans-serif;">
 
-  // TODO: Add SDKs for Firebase products that you want to use
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Portfolio - Contact</title>
+  <meta name="description" content="My own software developer portfolio site">
+  <style>
+    a {
+      color: inherit !important;
+      text-decoration: inherit !important;
+    }
 
-  // https://firebase.google.com/docs/web/setup#available-libraries
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
 
+    .card {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-  // Your web app's Firebase configuration
+    canvas {
+      width: 100%;
+    } 
+  </style>
 
-  const firebaseConfig = {
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+  <link rel="stylesheet" href="assets/css/aos.min.css">
+</head>
 
-    apiKey: "AIzaSyA_9BJz0TQo6x19pd9YPGLVA_puPadYp9k",
+<body class="bg-dark">
+  <div class="container-fluid" style="position: relative">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg sticky-top">
+        <a class="navbar-brand" href="./index.html">
+          <span class="text-light brand" style="font-weight: 600;">Portfolio</span>
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-light" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="projects/index.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link scrollto active text-light" href="#">Contact</a></li>
+        </ul>
+        <strong class="navbar-nav ml-auto text-light" id="toggle">Toggle Dark Mode</strong>
+      </nav>
+    </div>
+  </div>
+  <div class="container text-light">
+    <section style="margin-top: 2vh;">
+      <h1 style="font-size: 2rem; font-weight: bold;">Contact Me</h1>
+      <p style="font-size: 24px; font-weight: 400;">Feel free to contact me if you have any questions, collaboration
+        opportunities or want to connect. I'm always
+        open to new conversations and ideas. Connect with me on GitHub to explore my projects and contributions, on
+        LinkedIn for professional networking and industry discussions, and you can email me. I look forward to hearing
+        from you</p>
 
-    authDomain: "correlation-6c8ee.firebaseapp.com",
+      <div class="container" style="margin-top: 1vh;">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card bg-dark contact-card">
+              <div class="card-body">
+                <h5 class="card-title">GitHub</h5>
+                <p class="card-text">Connect with me on GitHub</p>
+                <a href="https://github.com/mpc19" class="btn btn-outline-light" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-dark contact-card">
+              <div class="card-body">
+                <h5 class="card-title">LinkedIn</h5>
+                <p class="card-text">Connect with me on LinkedIn</p>
+                <a href="https://www.linkedin.com/in/mark-channon" class="btn btn-outline-light"
+                  target="_blank">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-dark contact-card">
+              <div class="card-body">
+                <h5 class="card-title">Email</h5>
+                <p class="card-text">Send me an email</p>
+                <a href="mailto:" class="btn btn-outline-light">Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    projectId: "correlation-6c8ee",
+    </section>
+  </div>
+  <footer class="text-center">
+    <div class="text-light" style="padding-top: 2rem; align-items: center;">
+      <ul>
+        <li class="list-inline-item me-4"><a aria-label="Link to LinkedIn profile"
+            href="https://www.linkedin.com/in/mark-channon/"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+              height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin linkedin">
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
+              </path>
+            </svg></li></a>
+        <li class="list-inline-item"><a aria-label="Link to GitHub profile" href="https://github.com/mpc19"><svg
+              xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+              class="bi bi-github github">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg></li></a>
+      </ul>
+      <p class="text-light">Copyright © 2023</p>
+    </div>
+  </footer>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/script.min.js"></script>
+  <script src="assets/js/aos.min.js"></script>
+</body>
 
-    storageBucket: "correlation-6c8ee.appspot.com",
-
-    messagingSenderId: "530916493763",
-
-    appId: "1:530916493763:web:de21c0c2d76306cdbcd576"
-
-  };
-
-
-  // Initialize Firebase
-
-  const app = initializeApp(firebaseConfig);
- console.log("loaded firebase");
-</script>
-<script>
- const button;
-</script>
-</head><body class="bg-dark" style="font-family: 'Noto Sans', sans-serif;"><div class="container" style="font-family: 'Noto Sans', sans-serif;"><nav class="navbar navbar-light navbar-expand-md py-3" style="font-family: 'Noto Sans', sans-serif;"><div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="font-family: 'Noto Sans', sans-serif;"><span class="text-light" style="font-family: 'Noto Sans', sans-serif;">Mark C</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="font-family: 'Noto Sans', sans-serif;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navcol-2" style="font-family: 'Noto Sans', sans-serif;"><ul class="navbar-nav me-auto" style="font-family: 'Noto Sans', sans-serif;"><li class="nav-item" style="font-family: 'Noto Sans', sans-serif;"><a class="nav-link active text-light" href="index.html" style="font-family: 'Noto Sans', sans-serif;">Home</a></li><li class="nav-item" style="font-family: 'Noto Sans', sans-serif;"><a class="nav-link text-light" href="projects/index.html">Projects</a></li><li class="nav-item" style="font-family: 'Noto Sans', sans-serif;"><a class="nav-link text-light" href="contact.html" style="font-family: 'Noto Sans', sans-serif;">Contact</a></li></ul></div><label class="form-label text-light py-sm-0" id="toggle" style="margin: 6px;font-family: 'Noto Sans', sans-serif;">Toggle Dark Mode</label></div></nav></div><div class="container text-light" style="font-family: 'Noto Sans', sans-serif;"><section class="py-4 py-xl-5"><div class="container"><div class="row mb-5"><div class="col-md-8 col-xl-6 text-center mx-auto"><h2>Contact me</h2></div></div><div class="row d-flex justify-content-center"><div class="col-md-6 col-lg-4 col-xl-4"><div class="d-flex flex-column justify-content-center align-items-start h-100"><div class="d-flex align-items-center p-3"><div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bg-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-envelope">
-  <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
-</svg></div><div class="px-2"><h6 class="text-sm-start mb-0">Email</h6><p class="mb-0">mark@gmail.com</p></div></div><div class="d-flex align-items-center p-3"><div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bg-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin">
-  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-</svg></div><div class="px-2"><h6 class="mb-0">LinkedIn</h6><p class="mb-0">somewhere</p></div></div></div></div><div class="col-md-6 col-lg-5 col-xl-4"><div><form class="p-3 p-xl-4" method="post"><div class="mb-3"><input class="form-control" type="text" id="name-1" name="name" placeholder="Name"></div><div class="mb-3"><input class="form-control" type="email" id="email-1" name="email" placeholder="Email"></div><div class="mb-3"><textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Message"></textarea></div><div><button class="btn btn-primary d-block w-100 bg-dark shadow-lg" type="submit">Send </button></div></form></div></div></div></div></section></div><footer class="text-center bg-dark" data-aos="fade-up" style="font-family: 'Noto Sans', sans-serif;"><div class="container text-muted m-auto py-4 py-lg-5 bg-dark" style="padding-top: 148px;height: 178px;margin-top: 33px;"><ul class="list-inline"><li class="list-inline-item me-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin">
-  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-</svg></li><li class="list-inline-item me-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-twitter">
-  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
-</svg></li><li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github">
-  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-</svg></li></ul><p class="mb-0">Copyright © 2023 Mark Channon</p></div></footer><script src="assets/bootstrap/js/bootstrap.min.js"></script><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script src="assets/js/script.min.js"></script><script src="assets/js/aos.min.min.js"></script></body></html>
+</html>

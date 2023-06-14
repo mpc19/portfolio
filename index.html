@@ -8,65 +8,26 @@
   <title>Portfolio</title>
   <meta name="description" content="My personal software development portfolio">
   <style>
-    * {
-      font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      transition: all 500ms;
-    }
-
-    .active {
-      text-decoration: underline;
-    }
-
-    .github:hover {
-      color: rgb(71, 71, 71);
-      transition: all 400ms;
-    }
-
-    .linkedin:hover {
-      color: rgb(10, 102, 194);
-      transition: all 400ms;
-    }
-
-    .nav-item:hover {
-      opacity: 0.85;
-      transition: all 400ms;
-
-    }
-
-    .btn:hover {
-      background-color: #84848431 !important;
-      scale: 1.02;
-      transition: all 400ms;
-    }
-
-    .navbar-nav .nav-link {
-      position: relative;
-      padding-bottom: 6px;
-    }
-
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
+    video {
+      object-fit: contain;
       width: 100%;
-      height: 2px;
-      background-color: transparent;
-      background-image: radial-gradient(70% 200% at 14% 70%, #86f3ff 0%, #3e9eff 30%, #00eaff 98%);
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      height: 100%;
     }
 
-    .navbar-nav .nav-link.hovered::after {
-      opacity: 1;
-      transition: opacity 0.3s ease-in-out;
-    }
+    @media (max-width: 768px) {
+      .homepage {
+        padding: 20px;
+      }
 
-    .navbar-nav .nav-link.active::after {
-      opacity: 1;
+      .button-row {
+        flex-wrap: wrap;
+      }
+
+      .button-row button {
+        margin: 10px;
+        width: 100%;
+        max-width: 300px;
+      }
     }
   </style>
 
@@ -79,51 +40,49 @@
 <body class="bg-dark">
   <div class="container-fluid">
     <div class="container">
-      <nav class="navbar navbar-expand-md">
+      <nav class="navbar navbar-expand-lg sticky-top">
         <a class="navbar-brand" href="#">
           <span class="text-light brand" style="font-weight: 600;">Portfolio</span>
         </a>
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link scrollto active text-light" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link text-light" href="projects/index.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link text-light" href="contact.html">Contact</a></li>
         </ul>
-        <label class="navbar-nav text-light" id="toggle">Toggle Dark Mode</label>
-
+        <label class="navbar-nav text-light ml-auto" id="toggle">Toggle Dark Mode</label>
       </nav>
     </div>
   </div>
 
-  <section id="main" data-aos="slide-up" data-aos-duration="800">
-    <container class="container-fluid" , style="position: absolute">
-      <video style="position: absolute; top: 0; left: 0; z-index: 1; filter: blur(2px);" src="assets/vid/video-desktop.webm" autoplay loop
-        data-autoplay-desktop="true" data-autoplay-mobile="true" data-src-desktop="assets/vid/video-desktop.webm"
-        data-src-mobile="assets/vid/video-mobile.webm"></video>
+  <section id="main">
+    <container class="container-fluid" style="position: absolute">
+      <video style="position: absolute; top: 0; left: 0; z-index: 1; filter: blur(2px);"
+        src="assets/vid/video-desktop.webm" playsinline autoplay muted loop data-autoplay-desktop="true" data-autoplay-mobile="true"
+        data-src-desktop="assets/vid/video-desktop.webm" data-src-mobile="assets/vid/video-mobile.webm" aria-label="Stock footage of sea"></video>
       <div class="homepage"
         style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; height: 100vh;">
-        <h1 class="text-light"
-          style="font-weight:lighter; font-size: 3rem; margin-top: 24vh;">
+        <h1 class="text-light" style="font-weight:lighter; font-size: 3rem; margin-top: 12vh;">
           <strong
-            style="z-index: 1; color: transparent; background-clip: text; background-image: radial-gradient(70% 200% at 14% 70%, #86f3ff 0%, #3cd8ff 67%, #00eaff 98%);">
+            style="z-index: 1; color: transparent; -webkit-background-clip:text; background-clip:text; background-image: radial-gradient(70% 200% at 14% 70%, #86f3ff 0%, #3cd8ff 67%, #00eaff 98%);">
             Mark Channon
           </strong><br>
           Software Developer
         </h1>
-        <div class="text-light" style="display: flex; justify-content: center; gap: 48px; margin-top: 6px;">
-          <button class="btn btn-lg btn-outline-light">About</button>
-          <button class="btn btn-lg btn-outline-light">Contact</button>
-          <button class="btn btn-lg btn-outline-light">Projects</button>
+        <div class="text-light button-row" style="display: flex; justify-content: center; gap: 48px; margin-top: 6px;">
+          <a class="btn btn-lg btn-outline-light href="#about">About</a>
+          <a class="btn btn-lg btn-outline-light" href="contact.html">Contact</a>
+          <a class="btn btn-lg btn-outline-light" href="projects/index.html">Projects</a>
         </div>
         <div class="text-light" style="padding-top: 2rem;">
           <ul>
-            <li class="list-inline-item me-4"><a href="https://www.linkedin.com/in/mark-channon/"><svg
+            <li class="list-inline-item me-4"><a aria-label="Link to LinkedIn profile" href="https://www.linkedin.com/in/mark-channon/"><svg
                   xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
                   class="bi bi-linkedin linkedin">
                   <path
                     d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
                   </path>
                 </svg></li></a>
-            <li class="list-inline-item"><a href="https://github.com/mpc19"><svg xmlns="http://www.w3.org/2000/svg"
+            <li class="list-inline-item"><a aria-label="Link to GitHub profile" href="https://github.com/mpc19"><svg xmlns="http://www.w3.org/2000/svg"
                   width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github github">
                   <path
                     d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
@@ -141,33 +100,6 @@
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/script.min.js"></script>
   <script src="assets/js/aos.min.js"></script>
-  <script>
-    AOS.init();
-
-    function loadCSS(url) {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = url;
-      document.head.appendChild(link);
-    }
-
-    // Load the stylesheet asynchronously after the page has finished loading
-    window.addEventListener('load', function () {
-      loadCSS('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
-    });
-
-    $(document).ready(function () {
-      $(".navbar-nav .nav-link").hover(
-        function () {
-          $(this).addClass("hovered");
-        },
-        function () {
-          $(this).removeClass("hovered");
-        }
-      );
-    });
-
-  </script>
 
 </body>
 
