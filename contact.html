@@ -27,9 +27,47 @@
       height: 100%;
     }
 
-    canvas {
-      width: 100%;
-    } 
+    .shape {
+      position: absolute;
+      z-index: -1;
+      right: -40%;
+    }
+
+    .shape2 {
+      position: absolute;
+      z-index: -1;
+      transform: rotate(-180deg);
+      left: -40%;
+      top: 40%;
+      filter:hue-rotate(15deg);
+    }
+
+    @media (max-width: 768px) {
+      .shape {
+        left: 50%;
+      }
+
+      .shape2 {
+        opacity: 0%;
+      }
+    }
+
+    @media (max-width: 17000px) {
+        .shape {
+          left: 95%;
+        }
+    }
+
+    @media (min-width: 2280px) {
+      .shape {
+        right: -30% !important;
+      }
+
+      .shape2 {
+        left: -30% !important;
+        top: 50%;
+      }
+    }
   </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -54,6 +92,8 @@
       </nav>
     </div>
   </div>
+  <img class="shape" src="assets/img/shape.webp">
+  <img class="shape2" src="assets/img/shape.webp">
   <div class="container text-light">
     <section style="margin-top: 2vh;">
       <h1 style="font-size: 2rem; font-weight: bold;">Contact Me</h1>

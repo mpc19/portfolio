@@ -22,7 +22,6 @@
       position: relative;
       width: 100%;
       height: 512px;
-      margin: 2px;
       overflow: hidden;
       cursor: pointer;
       background-size: cover;
@@ -53,8 +52,9 @@
       color: #fff;
       font-size: 2.5rem;
       text-align: center;
-      margin: 10px; 
+      margin: 10px;
     }
+
     .project p {
       color: #fff;
       text-align: center;
@@ -70,16 +70,44 @@
       font-style: italic;
     }
 
-    
     .project-video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
+    #project1 {
+      border-radius: 20px 0px 0px 20px;
+    }
+
+    #project4 {
+      border-radius: 0px 20px 20px 0px;
+    }
+
     @media (max-width: 767px) {
       .project-container {
         grid-template-columns: 1fr;
+        margin-top: 1rem;
+      }
+
+      .project-overlay {
+        opacity: 1;
+      }
+
+      #project1 {
+        border-radius: 20px !important;
+      }
+
+      #project2 {
+        border-radius: 20px !important;
+      }
+
+      #project3 {
+        border-radius: 20px !important;
+      }
+
+      #project4 {
+        border-radius: 20px !important;
       }
     }
   </style>
@@ -98,7 +126,7 @@
           </li>
           <li class="nav-item"><a class="nav-link text-light" href="../contact.html">Contact</a></li>
         </ul>
-        <label class="navbar-nav ml-auto text-light" id="toggle">Toggle Dark Mode</label>
+        <strong class="navbar-nav ml-auto text-light" id="toggle">Toggle Dark Mode</strong>
       </nav>
     </div>
   </div>
@@ -107,52 +135,86 @@
     <h1 class="text-light" style="font-size: 2rem; font-weight: bold;">Projects Overview</h1>
     <p class="text-light">These are just some of my projects that I am happy to share from websites to game design</p>
     <div class="project-container">
-      <div class="project" id="project1"
-        style="background-image: url(../assets/img/projects/weather.webp); border-radius: 20px 0px 0px 20px;">
-        <a href="https://mpc19.github.io/weather-site">
-        <div class="project-overlay">
-          <h2>Weather App</h2>
-          <p class="project-description">A weather app which utilises the OpenWeather API to provide accurate information about the weather of a specified location and a associated picture using the Unsplash API</p>
-          <p class="project-technologies">Technologies used: HTML, JS, CSS</p>
-        </div>
+      <div class="project" id="project1" aria-label="Image of Weather App"
+        style="background-image: url(../assets/img/projects/weather.webp);">
+        <a href="https://mpc19.github.io/weather-site" aria-label="Link to open the Weather App">
+          <div class="project-overlay">
+            <h2>Weather App</h2>
+            <p class="project-description">A weather app which utilises the OpenWeather API to provide accurate
+              information about the weather of a specified location and a associated picture using the Unsplash API</p>
+            <p class="project-technologies">Technologies used: HTML, JS, CSS</p>
+            <a aria-label="Link to GitHub repo of the Weather App" href="https://github.com/mpc19/weather-site">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#fff" viewBox="0 0 16 16"
+                class="bi bi-github github">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                </path>
+              </svg>
+            </a>
+          </div>
         </a>
       </div>
-      <div class="project" id="project2"
+      <div class="project" id="project2" aria-label="Image of React To-do List app"
         style="background-image: url(../assets/img/projects/todo.webp);">
-        <a href="https://react-list-mc.vercel.app/">
-        <div class="project-overlay">
-          <h2>React To-do List</h2>
-          <p class="project-description">A to-do list built in React</p>
-          <br>
-          <p class="project-technologies">Technologies used: React, HTML, CSS, JS</p>
-        </div>
-      </a>
+        <a href="https://react-list-mc.vercel.app/" aria-label="Link to open the React To-do List App">
+          <div class="project-overlay">
+            <h2>React To-do List</h2>
+            <p class="project-description">My first project in React which is a to-do list with CSS animations to add
+              some dynamicism to it.</p>
+            <br>
+            <p class="project-technologies">Technologies used: React, JS, HTML, CSS</p>
+            <a aria-label="Link to GitHub repo of the React To-do List"
+              href="https://github.com/mpc19/react-list">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#fff" viewBox="0 0 16 16"
+                class="bi bi-github github">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </a>
       </div>
-      <div class="project" id="project3"
+      <div class="project" id="project3" aria-label="Image of the Dropbox game"
         style="background-image: url(../assets/img/projects/dropbox.webp);">
-        <a href="https://github.com/mpc19/college-coursework/tree/main/Dropbox%20-%20Game%20Design">
         <div class="project-overlay">
           <h2>Dropbox</h2>
-          <p class="project-description">Dropbox was my college coursework for Game Design, it is a singleplayer platform game built in C#</p>
+          <p class="project-description">Dropbox was my college coursework for Game Design, it is a singleplayer
+            endless platformer game built in C# with exponential difficulty increases</p>
           <br>
           <p class="project-technologies">Technologies used: C#</p>
+          <a aria-label="Link to GitHub repo of Dropbox"
+            href="https://github.com/mpc19/college-coursework/tree/main/Dropbox%20-%20Game%20Design">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#fff" viewBox="0 0 16 16"
+              class="bi bi-github github">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+          </a>
         </div>
-      </a>
       </div>
-      <div class="project" id="project4"
-        style="border-radius: 0px 20px 20px 0px;">
-        <a href="../index.html">
-        <video class="project-video" autoplay loop muted style="width: 100%; height: 100%;">
-          <source src="../assets/vid/video-mobile.webm" type="video/webm">
-          Your browser does not support the video tag.
-        </video>
-        <div class="project-overlay">
-          <h2>Portfolio</h2>
-          <p class="project-description">The site you are on now which hosts my projects.</p>
-          <br>
-          <p class="project-technologies">Technologies used: HTML, CSS, Bootstrap</p>
-        </div>
-      </a>
+      <div class="project" id="project4">
+        <a href="../index.html" aria-label="Video of waves, the same used on the home-page">
+          <video class="project-video" autoplay loop muted style="width: 100%; height: 100%;">
+            <source src="../assets/vid/video-mobile.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-overlay">
+            <h2>Portfolio</h2>
+            <p class="project-description">The site you are on now which .</p>
+            <br>
+            <p class="project-technologies">Technologies used: HTML, CSS, Bootstrap</p>
+            <a aria-label="Link to GitHub repo of the portfolio site" href="https://github.com/mpc19/portfolio">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#fff" viewBox="0 0 16 16"
+                class="bi bi-github github">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -160,20 +222,26 @@
     <footer class="text-center">
       <div class="text-light" style="padding-top: 2rem; align-items: center;">
         <ul>
-          <li class="list-inline-item me-4"><a aria-label="Link to LinkedIn profile"
-              href="https://www.linkedin.com/in/mark-channon/"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
-                height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin linkedin">
+          <li class="list-inline-item me-4">
+            <a aria-label="Link to LinkedIn profile" href="https://www.linkedin.com/in/mark-channon/">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                class="bi bi-linkedin linkedin">
                 <path
                   d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
                 </path>
-              </svg></li></a>
-          <li class="list-inline-item"><a aria-label="Link to GitHub profile" href="https://github.com/mpc19"><svg
-                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+              </svg>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a aria-label="Link to GitHub profile" href="https://github.com/mpc19">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
                 class="bi bi-github github">
                 <path
                   d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
                 </path>
-              </svg></li></a>
+              </svg>
+            </a>
+          </li>
         </ul>
         <p class="text-light">Copyright © 2023</p>
       </div>
