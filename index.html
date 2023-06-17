@@ -60,9 +60,9 @@
 
   <section id="main">
     <container class="container-fluid" style="position: absolute">
-      <video style="position: absolute; top: 0; left: 0; z-index: 1;"
-        src="assets/vid/video-desktop.webm" playsinline autoplay muted loop data-autoplay-desktop="true" data-autoplay-mobile="true"
-        data-src-desktop="assets/vid/video-desktop.webm" data-src-mobile="assets/vid/video-mobile.webm" aria-label="Stock footage of sea"></video>
+      <video id="bg" style="position: absolute; top: 0; left: 0; z-index: 1; filter: blur(2px);"
+        playsinline autoplay muted loop data-autoplay-desktop="true" data-autoplay-mobile="true"
+        aria-label="Stock footage of sea"></video>
       <div class="homepage"
         style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; height: 100vh;">
         <h1 class="title" style="font-weight:lighter; font-size: 3rem; margin-top: 12vh;">
@@ -105,6 +105,15 @@
   <script src="assets/js/script.min.js"></script>
   <script src="assets/js/aos.min.js"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if(window.innerWidth < 768) {
+        document.getElementById("bg").src = "assets/vid/waves-mobile.webm";
+      } else {
+        document.getElementById("bg").src = "assets/vid/waves-desktop.webm";
+      }
+    })
+  </script>
 </body>
 
 </html>
