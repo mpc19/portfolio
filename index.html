@@ -5,106 +5,163 @@
   <meta charset="utf-8">
   <meta http-equiv="cache-control" content="public, max-age=604800, must-revalidate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Portfolio</title>
+  <title>Mark Channon - Portfolio</title>
   <meta name="description" content="My personal software development portfolio">
   <style>
     video {
-      object-fit: contain;
+      object-fit: fill;
+      opacity: 50%;
       width: 100%;
       height: 100%;
+      background-color: black !important;
     }
 
-    @media (max-width: 768px) {
-      .homepage {
-        padding: 20px;
-      }
-
-      .button-row {
-        flex-wrap: wrap;
-      }
-
-      .button-row button {
-        margin: 10px;
-        width: 100%;
-        max-width: 300px;
-      }
+    .homepage {
+      height: 50vh;
     }
 
-    .title {
-      color:#fff;
+    .heading {
+      border-style: solid;
+      border-width: 0px;
+      border-bottom-width: 1px;
+      padding: 5px;
+    }
+
+    .no-fill {
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 2px #fff;
+    }
+
+    .technologies-list {
+      display: flex;
+      margin-top:2rem;
+      flex-direction: row;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .technologies-image {
+      max-height: 64px;
+      max-width: 64px;
+    }
+
+    .theme {
+      background: none;
+      border-style: none;
+      color: white;
     }
   </style>
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.min.css">
   <link rel="stylesheet" href="assets/css/aos.min.css">
 </head>
 
 <body class="bg-dark">
-  <div class="container-fluid">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg sticky-top">
-        <a class="navbar-brand" href="#">
-          <span class="text-light brand" style="font-weight: 600;">Portfolio</span>
-        </a>
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link scrollto active text-light" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="projects/index.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="contact.html">Contact</a></li>
-        </ul>
-        <strong class="navbar-nav ml-auto text-light" id="toggle">Toggle Dark Mode</strong>
-      </nav>
-    </div>
-  </div>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <container class="container-lg">
+      <a class="navbar-brand" href="#">
+        <img class="logo me-auto" id="logo">
+      </a>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active text-light" href="#"><b>Home</b></a>
+            <a class="nav-item nav-link text-light" href="projects.html">Projects</a>
+            <a class="nav-item nav-link text-light" href="contact.html">Contact</a>
+          </ul>
+        </div>
+      </div>
+
+      <strong class="navbar-text ml-auto text-light" id="toggle">Toggle Dark Mode</strong>
+    </container>
+  </nav>
+
+
 
   <section id="main">
-    <container class="container-fluid" style="position: absolute">
-      <video id="bg" style="position: absolute; top: 0; left: 0; z-index: 1; filter: blur(2px);"
+    <container>
+      <div class="homepage"
+        style="display: flex; flex-direction: column; align-items: center; text-align: center; height: 100vh;">
+        <video id="bg" style="position: absolute; top: 0; left: 0; z-index: -1; filter: blur(2px);"
         playsinline autoplay muted loop data-autoplay-desktop="true" data-autoplay-mobile="true"
         aria-label="Stock footage of sea"></video>
-      <div class="homepage"
-        style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; height: 100vh;">
-        <h1 class="title" style="font-weight:lighter; font-size: 3rem; margin-top: 12vh;">
+        <h1 class="title text-light" style="font-weight:lighter; font-size: 3rem; margin-top: 28vh;">
+          <b>Hi I'm</b><br>
           <strong
-            style="z-index: 1; color: transparent; -webkit-background-clip:text; background-clip:text; background-image: radial-gradient(70% 200% at 14% 70%, #86f3ff 0%, #3cd8ff 67%, #00eaff 98%);">
-            Mark Channon
-          </strong><br>
-          Software Developer
-        </h1>
-        <div class="text-light button-row" style="display: flex; justify-content: center; gap: 48px; margin-top: 6px;">
-          <a class="btn btn-lg btn-outline-light" href="about.html">About</a>
-          <a class="btn btn-lg btn-outline-light" href="projects/index.html">Projects</a>
+            style="color: transparent; -webkit-background-clip:text; background-clip:text; background-image: radial-gradient(70% 200% at 14% 70%, #86f3ff 0%, #3cd8ff 67%, #00eaff 98%);">
+            <b>Mark Channon</b></h1>
+          </strong>
+          <h1 class="title text-light" style="font-weight:lighter; font-size: 3rem;">A Software Developer</h1>
+ 
+        <div class="text-light button-row" style="display: flex; gap: 48px;">
+          <a class="btn btn-lg btn-outline-light" href="#about">About</a>
+          <a class="btn btn-lg btn-outline-light" href="projects.html">Projects</a>
           <a class="btn btn-lg btn-outline-light" href="contact.html">Contact</a>
-        </div>
-        <div class="text-light" style="padding-top: 2rem;">
-          <ul>
-            <li class="list-inline-item me-4"><a aria-label="Link to LinkedIn profile" href="https://www.linkedin.com/in/mark-channon/"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
-                  class="bi bi-linkedin linkedin">
-                  <path
-                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
-                  </path>
-                </svg></li></a>
-            <li class="list-inline-item"><a aria-label="Link to GitHub profile" href="https://github.com/mpc19"><svg xmlns="http://www.w3.org/2000/svg"
-                  width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github github">
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-                  </path>
-                </svg></li></a>
-          </ul>
-          <p class="mb-0">Copyright © 2023</p>
         </div>
       </div>
     </container>
-
   </section>
+  <section data-aos="fade-up"  data-aos-easing="ease-in-out"
+  data-aos-duration="500" id="about" class="bg-dark container text-light" style="margin-top:-50px;">
+    <container class="container">
+      <h2 class="text-light heading">About Me</h1>
+        <div><p style="font-weight: 600; font-size: larger;">Welcome to my website! Based in Southampton, I am a self-taught software developer with a passion for building innovative products as a freelancer while  throughout the past 5 years. My expertise lies in the realm of backend technologies and proficient database management. I am driven by a strong desire to assist organizations in crafting and implementing cutting-edge, efficient, and high-performance products and technologies that lead to enhanced profitability. With a friendly and formal approach, I aim to collaborate with like-minded individuals and businesses to create remarkable digital solutions that make a meaningful impact.</p></div>
+    </container>
+  </section>
+  <section data-aos="fade-up"  data-aos-easing=""
+  data-aos-duration="500" id="technologies" class="container bg-dark text-light">
+    <container>
+      <h2 class="text-light heading">Technologies</h1>
+        <ul class="technologies-list">
+          <img class="technologies-image" data-aos="fade-up"  data-aos-easing="ease-in-out"
+          data-aos-duration="500" data-aos-delay="100" src="./assets/img/technologies/csharp.png" alt="C# Logo"> 
+          <img class="technologies-image" data-aos="fade-up"  data-aos-easing="ease-in-out"
+          data-aos-duration="500" data-aos-delay="200" src="./assets/img/technologies/java.png" alt="Java logo"> 
+          <img class="technologies-image" data-aos-delay="300" data-aos="fade-up"  data-aos-easing="ease-in-out"
+          data-aos-duration="500" src="./assets/img/technologies/html.png" alt="HTML logo"> 
+          <img class="technologies-image" data-aos-delay="200" data-aos="fade-up"  data-aos-easing="ease-in-out"
+          data-aos-duration="500" src="./assets/img/technologies/javascript.png" alt="JavaScript logo"> 
+          <img class="technologies-image" data-aos-delay="100" data-aos="fade-up"  data-aos-easing="ease-in-out"
+          data-aos-duration="500" src="./assets/img/technologies/vba.png" alt="VisualBasic logo"> 
+        </ul>
+        
+    </container>
+  </section>
+  <footer class="text-center">
+    <div data-aos="fade-up" data-aos-easing="ease-in-out"
+    data-aos-duration="2200"class="text-light" data-aos-once="true" style="padding-top: 2rem; align-items: center;">
+      <ul>
+        <li class="list-inline-item me-4">
+          <a aria-label="Link to LinkedIn profile" href="https://www.linkedin.com/in/mark-channon/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+              class="bi bi-linkedin linkedin">
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a aria-label="Link to GitHub profile" href="https://github.com/mpc19">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+              class="bi bi-github github">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <p class="text-light">Copyright © Mark Channon 2023</p>
+    </div>
+  </footer>
 
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/script.min.js"></script>
   <script src="assets/js/aos.min.js"></script>
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       if(window.innerWidth < 768) {
