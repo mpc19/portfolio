@@ -51,8 +51,16 @@
       border-style: none;
       color: white;
     }
+
+    #map { height: 264px; width: 264px; }
   </style>
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.min.css">
   <link rel="stylesheet" href="assets/css/aos.min.css">
@@ -61,13 +69,13 @@
 <body class="bg-dark">
   <nav class="navbar navbar-expand-lg sticky-top">
     <container class="container-lg">
-      <a class="navbar-brand" href="#">
-        <img class="logo me-auto" id="logo">
+      <a class="navbar-brand" href="#main">
+        <img class="logo me-auto" id="logo" alt="Site logo which is initials of MC">
       </a>
       <div class="collapse navbar-collapse" id="myNavbar">
         <div class="navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <a class="nav-item nav-link active text-light" href="#"><b>Home</b></a>
+            <a class="nav-item nav-link active text-light" href="#main"><b>Home</b></a>
             <a class="nav-item nav-link text-light" href="projects.html">Projects</a>
             <a class="nav-item nav-link text-light" href="contact.html">Contact</a>
           </ul>
@@ -107,31 +115,31 @@
   data-aos-duration="500" id="about" class="bg-dark container text-light" style="margin-top:-50px;">
     <container class="container">
       <h2 class="text-light heading">About Me</h1>
-        <div><p style="font-weight: 600; font-size: larger;">Welcome to my website! Based in Southampton, I am a self-taught software developer with a passion for building innovative products as a freelancer while  throughout the past 5 years. My expertise lies in the realm of backend technologies and proficient database management. I am driven by a strong desire to assist organizations in crafting and implementing cutting-edge, efficient, and high-performance products and technologies that lead to enhanced profitability. With a friendly and formal approach, I aim to collaborate with like-minded individuals and businesses to create remarkable digital solutions that make a meaningful impact.</p></div>
-    </container>
+        <div><p style="font-weight: 500; font-size: larger;">Welcome to my website! Based in Southampton, I am a self-taught software developer with a passion for building innovative products as a freelancer while  throughout the past 5 years. My expertise lies in the realm of backend technologies and proficient database management. I am driven by a strong desire to assist organizations in crafting and implementing cutting-edge, efficient, and high-performance products and technologies that lead to enhanced profitability. With a friendly and formal approach, I aim to collaborate with like-minded individuals and businesses to create remarkable digital solutions that make a meaningful impact.</p></div>
+        <div id="map">
+      </container>
   </section>
-  <section data-aos="fade-up"  data-aos-easing=""
+  <section data-aos="fade-up"  data-aos-easing="ease-in-out"
   data-aos-duration="500" id="technologies" class="container bg-dark text-light">
     <container>
       <h2 class="text-light heading">Technologies</h1>
-        <ul class="technologies-list">
+        <div class="technologies-list">
           <img class="technologies-image" data-aos="fade-up"  data-aos-easing="ease-in-out"
-          data-aos-duration="500" data-aos-delay="100" src="./assets/img/technologies/csharp.png" alt="C# Logo"> 
+          data-aos-duration="500" data-aos-delay="100" src="./assets/img/technologies/csharp.webp" alt="C# Logo"> 
           <img class="technologies-image" data-aos="fade-up"  data-aos-easing="ease-in-out"
-          data-aos-duration="500" data-aos-delay="200" src="./assets/img/technologies/java.png" alt="Java logo"> 
+          data-aos-duration="500" data-aos-delay="200" src="./assets/img/technologies/java.webp" alt="Java logo"> 
           <img class="technologies-image" data-aos-delay="300" data-aos="fade-up"  data-aos-easing="ease-in-out"
-          data-aos-duration="500" src="./assets/img/technologies/html.png" alt="HTML logo"> 
+          data-aos-duration="500" src="./assets/img/technologies/html.webp" alt="HTML logo"> 
           <img class="technologies-image" data-aos-delay="200" data-aos="fade-up"  data-aos-easing="ease-in-out"
-          data-aos-duration="500" src="./assets/img/technologies/javascript.png" alt="JavaScript logo"> 
+          data-aos-duration="500" src="./assets/img/technologies/javascript.webp" alt="JavaScript logo"> 
           <img class="technologies-image" data-aos-delay="100" data-aos="fade-up"  data-aos-easing="ease-in-out"
-          data-aos-duration="500" src="./assets/img/technologies/vba.png" alt="VisualBasic logo"> 
-        </ul>
+          data-aos-duration="500" src="./assets/img/technologies/vba.webp" alt="VisualBasic logo"> 
+        </div>
         
     </container>
   </section>
   <footer class="text-center">
-    <div data-aos="fade-up" data-aos-easing="ease-in-out"
-    data-aos-duration="2200"class="text-light" data-aos-once="true" style="padding-top: 2rem; align-items: center;">
+    <div class="text-light"  style="padding-top: 2rem; align-items: center;">
       <ul>
         <li class="list-inline-item me-4">
           <a aria-label="Link to LinkedIn profile" href="https://www.linkedin.com/in/mark-channon/">
@@ -170,6 +178,12 @@
         document.getElementById("bg").src = "assets/vid/waves-desktop.webm";
       }
     })
+
+    var map = L.map('map').setView([50.908946, -1.402773], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
   </script>
 </body>
 
